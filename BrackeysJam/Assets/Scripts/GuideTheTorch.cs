@@ -7,7 +7,7 @@ public class GuideTheTorch : MonoBehaviour {
     public GameObject torch;
 	// Use this for initialization
 	void Start () {
-        Cursor.visible = false;
+        
 	}
 	
 	// Update is called once per frame

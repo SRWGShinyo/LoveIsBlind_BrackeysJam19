@@ -32,6 +32,12 @@ public class UIHandling : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        if (!player)
+        {
+            player = GameObject.Find("Player");
+            if (player)
+                bSc = player.GetComponentInChildren<BulletScript>();
+        }
         actualSC = SceneManager.GetActiveScene().name;
 
         if (SceneManager.GetActiveScene().name == "Title")
