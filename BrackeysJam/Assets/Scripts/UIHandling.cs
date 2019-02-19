@@ -12,10 +12,13 @@ public class UIHandling : MonoBehaviour {
     public GameObject pauseMen;
     public GameObject winMenu;
 
+    public GameObject titleMenu;
+
     BulletScript bSc;
 
     public int points = 0;
     string actualSC;
+    string nextLev;
 
     private void Awake()
     {
@@ -32,12 +35,10 @@ public class UIHandling : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (!player)
-        {
-            player = GameObject.Find("Player");
-            if (player)
-                bSc = player.GetComponentInChildren<BulletScript>();
-        }
+        player = GameObject.Find("Player");
+        if (player)
+            bSc = player.GetComponentInChildren<BulletScript>();
+
         actualSC = SceneManager.GetActiveScene().name;
 
         if (SceneManager.GetActiveScene().name == "Title")
@@ -81,8 +82,7 @@ public class UIHandling : MonoBehaviour {
 
     public void Title()
     {
-        if (panel.activeSelf)
-            panel.SetActive(false);
+        panel.SetActive(false);
         pauseMen.SetActive(false);
         inGameUi.SetActive(false);
         winMenu.SetActive(false);
@@ -94,5 +94,101 @@ public class UIHandling : MonoBehaviour {
     {
         bSc.enabled = false;
         points += pts_;
+    }
+
+    public void loadLevel1()
+    {
+        gameObject.GetComponent<TitleMenuHandle>().menu.SetActive(false);
+
+        panel.SetActive(false);
+        inGameUi.SetActive(true);
+        pauseMen.SetActive(false);
+        winMenu.SetActive(false);
+        titleMenu.SetActive(false);
+
+        nextLev = "Level2";
+        gameObject.GetComponent<TimeManagement>().timer = 0f;
+
+        SceneManager.LoadScene("Level1");
+    }
+
+    public void loadLevel2()
+    {
+        gameObject.GetComponent<TitleMenuHandle>().menu.SetActive(false);
+
+        panel.SetActive(false);
+        inGameUi.SetActive(true);
+        pauseMen.SetActive(false);
+        winMenu.SetActive(false);
+        titleMenu.SetActive(false);
+
+        nextLev = "Level3";
+        gameObject.GetComponent<TimeManagement>().timer = 0f;
+
+        SceneManager.LoadScene("Level2");
+    }
+
+    public void loadLevel3()
+    {
+        gameObject.GetComponent<TitleMenuHandle>().menu.SetActive(false);
+
+        panel.SetActive(false);
+        inGameUi.SetActive(true);
+        pauseMen.SetActive(false);
+        winMenu.SetActive(false);
+        titleMenu.SetActive(false);
+
+        nextLev = "Level4";
+        gameObject.GetComponent<TimeManagement>().timer = 0f;
+
+        SceneManager.LoadScene("Level3");
+    }
+
+    public void loadLevel4()
+    {
+        gameObject.GetComponent<TitleMenuHandle>().menu.SetActive(false);
+
+        panel.SetActive(false);
+        inGameUi.SetActive(true);
+        pauseMen.SetActive(false);
+        winMenu.SetActive(false);
+        titleMenu.SetActive(false);
+
+        nextLev = "Level5";
+        gameObject.GetComponent<TimeManagement>().timer = 0f;
+
+        SceneManager.LoadScene("Level4");
+    }
+
+    public void loadLevel5()
+    {
+        gameObject.GetComponent<TitleMenuHandle>().menu.SetActive(false);
+
+        panel.SetActive(false);
+        inGameUi.SetActive(true);
+        pauseMen.SetActive(false);
+        winMenu.SetActive(false);
+        titleMenu.SetActive(false);
+
+        nextLev = "Level6";
+        gameObject.GetComponent<TimeManagement>().timer = 0f;
+
+        SceneManager.LoadScene("Level5");
+    }
+
+    public void loadLevel6()
+    {
+        gameObject.GetComponent<TitleMenuHandle>().menu.SetActive(false);
+
+        panel.SetActive(false);
+        inGameUi.SetActive(true);
+        pauseMen.SetActive(false);
+        winMenu.SetActive(false);
+        titleMenu.SetActive(false);
+
+        nextLev = "End";
+        gameObject.GetComponent<TimeManagement>().timer = 0f;
+
+        SceneManager.LoadScene("Level6");
     }
 }

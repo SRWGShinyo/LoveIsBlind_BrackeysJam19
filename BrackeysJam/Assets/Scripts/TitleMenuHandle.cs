@@ -14,7 +14,6 @@ public class TitleMenuHandle : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         changeUIState(false);
- 
 	}
 	
 	// Update is called once per frame
