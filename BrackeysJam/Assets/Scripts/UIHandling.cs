@@ -47,11 +47,13 @@ public class UIHandling : MonoBehaviour {
         {
             if (!panel.activeSelf)
             {
+                Cursor.visible = true;
                 Pause();
             }
 
             else
             {
+                Cursor.visible = false;
                 Resume();
             }
         }
