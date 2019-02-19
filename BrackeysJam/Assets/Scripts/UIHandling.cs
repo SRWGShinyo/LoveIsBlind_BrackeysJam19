@@ -25,7 +25,8 @@ public class UIHandling : MonoBehaviour {
     void Start () {
         player = GameObject.Find("Player");
         panel.SetActive(false);
-        bSc = player.GetComponentInChildren<BulletScript>();
+        if (player)
+            bSc = player.GetComponentInChildren<BulletScript>();
 	}
 	
 	// Update is called once per frame
