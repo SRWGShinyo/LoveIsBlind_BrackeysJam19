@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BulletScript : MonoBehaviour {
@@ -7,13 +8,16 @@ public class BulletScript : MonoBehaviour {
     
     float timeToShoot = 0f;
 
+    public ParticleSystem particles;
     public LayerMask whatToHit;
     public Transform bulletTrail;
     Transform firePoint;
+    public HashSet<GameObject> h;
 
 	// Use this for initialization
 	void Start () {
         firePoint = transform.Find("firePoint");
+        h = new HashSet<GameObject>();
 	}
 	
 	// Update is called once per frame
@@ -21,7 +25,16 @@ public class BulletScript : MonoBehaviour {
 
         if (Input.GetButton("Fire1") && timeToShoot <= 0f)
         {
-            Shoot();
+            particles.Play();
+            foreach (var n in h)
+            {
+                HoldOutline outlined = n.GetComponent<HoldOutline>();
+                if (outlined)
+                {
+                    outlined.outlin.enabled = true;
+                    outlined.disabled = false;
+                }
+            }
             timeToShoot = 0.3f;
         }
 
@@ -31,28 +44,14 @@ public class BulletScript : MonoBehaviour {
         }
 	}
 
-    void Shoot()
-    {
-        Vector2 mousePos = new Vector2(Camera.main.ScreenToWorldPoint(Input.mousePosition).x,
-            Camera.main.ScreenToWorldPoint(Input.mousePosition).y);
-        Vector2 firePos = new Vector2(firePoint.position.x, firePoint.position.y);
-        RaycastHit2D hit = Physics2D.Raycast(firePos, mousePos - firePos, 200, whatToHit);
-        Effect();
-        if (hit.collider != null)
-        {
-            HoldOutline outlined = hit.collider.gameObject.GetComponent<HoldOutline>();
-            if (outlined)
-            {
-                outlined.outlin.enabled = true;
-                outlined.disabled = false;
-            }
-            Debug.Log(hit.collider.gameObject.name);
-        } 
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        h.Add(collision.gameObject);
     }
 
-    void Effect()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        Instantiate(bulletTrail, firePoint.position, firePoint.rotation);
+        h.Remove(collision.gameObject);
     }
 }
