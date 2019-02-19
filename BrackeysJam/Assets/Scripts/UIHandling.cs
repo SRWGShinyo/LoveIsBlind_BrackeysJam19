@@ -41,11 +41,6 @@ public class UIHandling : MonoBehaviour {
 
         actualSC = SceneManager.GetActiveScene().name;
 
-        if (SceneManager.GetActiveScene().name == "Title")
-        {
-            inGameUi.SetActive(false);
-        }
-
         if (Input.GetKeyDown(KeyCode.Escape) && 
             (SceneManager.GetActiveScene().name != "Title")
             && winMenu.activeSelf == false)
@@ -64,7 +59,8 @@ public class UIHandling : MonoBehaviour {
 
     public void Pause()
     {
-        bSc.enabled = false;
+        if (bSc)
+            bSc.enabled = false;
         inGameUi.SetActive(false);
         pauseMen.SetActive(true);
         panel.SetActive(true);
@@ -73,7 +69,8 @@ public class UIHandling : MonoBehaviour {
 
     public void Resume()
     {
-        bSc.enabled = true;
+        if (bSc)
+            bSc.enabled = true;
         inGameUi.SetActive(true);
         pauseMen.SetActive(false);
         panel.SetActive(false);
@@ -83,16 +80,21 @@ public class UIHandling : MonoBehaviour {
     public void Title()
     {
         panel.SetActive(false);
-        pauseMen.SetActive(false);
+
         inGameUi.SetActive(false);
         winMenu.SetActive(false);
         Time.timeScale = 1f;
+        gameObject.GetComponent<TimeManagement>().timer = 0f;
         SceneManager.LoadScene("Title");
+
+        pauseMen.SetActive(false);
+        Destroy(gameObject);
     }
 
     public void addPoints(int pts_)
     {
-        bSc.enabled = false;
+        if (bSc)
+            bSc.enabled = false;
         points += pts_;
     }
 
@@ -190,5 +192,33 @@ public class UIHandling : MonoBehaviour {
         gameObject.GetComponent<TimeManagement>().timer = 0f;
 
         SceneManager.LoadScene("Level6");
+    }
+
+    public void loadNext()
+    {
+        switch(nextLev)
+        {
+            case "Level1":
+                loadLevel1();
+                break;
+            case "Level2":
+                loadLevel2();
+                break;
+            case "Level3":
+                loadLevel3();
+                break;
+            case "level4":
+                loadLevel4();
+                break;
+            case "level5":
+                loadLevel5();
+                break;
+            case "level6":
+                loadLevel6();
+                break;
+            default:
+                Debug.Log("WTF");
+                break;
+        }
     }
 }

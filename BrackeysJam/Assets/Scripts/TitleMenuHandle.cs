@@ -19,7 +19,8 @@ public class TitleMenuHandle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         torch = GameObject.Find("Torch");
-        Cursor.visible = false;
+        if (!menu.activeSelf)
+            Cursor.visible = false;
         if (SceneManager.GetActiveScene().name == "Title")
         {
             if (Input.GetKeyDown(KeyCode.Escape) && menu.activeSelf)
@@ -49,6 +50,7 @@ public class TitleMenuHandle : MonoBehaviour {
         }
         menu.SetActive(true);
         levels.SetActive(true);
+        Cursor.visible = true;
     }
 
     public void displayCredits()
@@ -59,6 +61,7 @@ public class TitleMenuHandle : MonoBehaviour {
         }
         menu.SetActive(true);
         credits.SetActive(true);
+        Cursor.visible = true;
     }
 
     public void displayHelp()
@@ -69,6 +72,7 @@ public class TitleMenuHandle : MonoBehaviour {
         }
         menu.SetActive(true);
         help.SetActive(true);
+        Cursor.visible = true;
     }
 
     public void quitGame()
