@@ -8,6 +8,7 @@ public class BulletScript : MonoBehaviour {
     
     float timeToShoot = 0f;
 
+    float toWait = 0.5f;
     public ParticleSystem particles;
     public LayerMask whatToHit;
     public Transform bulletTrail;
@@ -23,9 +24,13 @@ public class BulletScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetButton("Fire1") && timeToShoot <= 0f)
+        if (toWait != 0.5f)
         {
-            particles.Play();
+            toWait -= Time.deltaTime;
+        }
+        if (toWait <= 0f)
+        {
+            toWait = 0.5f;
             foreach (var n in h)
             {
                 HoldOutline outlined = n.GetComponent<HoldOutline>();
@@ -35,8 +40,14 @@ public class BulletScript : MonoBehaviour {
                     outlined.disabled = false;
                 }
             }
-            timeToShoot = 0.3f;
         }
+
+            if (Input.GetButton("Fire1") && timeToShoot <= 0f)
+            {
+                particles.Play();
+                toWait -= Time.deltaTime;
+                timeToShoot = 3f;
+            }
 
         else
         {
