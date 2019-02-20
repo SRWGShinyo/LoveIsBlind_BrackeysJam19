@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4366352653106772}
-  - component: {fileID: 58026925845034804}
   - component: {fileID: 50279687833332582}
+  - component: {fileID: 58498157629191976}
   - component: {fileID: 114685864127482410}
   - component: {fileID: 114317990139518094}
   - component: {fileID: 114580194875421808}
@@ -60,8 +60,9 @@ GameObject:
   - component: {fileID: 114587200628743742}
   - component: {fileID: 122619113059822146}
   - component: {fileID: 58947836133203406}
+  - component: {fileID: 95140706472388282}
   m_Layer: 8
-  m_Name: New Sprite
+  m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,6 +79,22 @@ GameObject:
   - component: {fileID: 108036077657400340}
   m_Layer: 8
   m_Name: Point Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1646082451081134
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4059242437021072}
+  - component: {fileID: 331305323462129938}
+  m_Layer: 8
+  m_Name: TorchSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,15 +169,29 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1369578531697186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.7, y: 7.8, z: -2.4}
-  m_LocalScale: {x: 10.504243, y: 10.176512, z: 1}
+  m_LocalPosition: {x: -6.7, y: 7.96, z: -2.4}
+  m_LocalScale: {x: 11.37, y: 10.620288, z: 1}
   m_Children:
   - {fileID: 4457236039680362}
   - {fileID: 4027901136216482}
   - {fileID: 4360109321774298}
   - {fileID: 4620516853604240}
+  - {fileID: 4059242437021072}
   m_Father: {fileID: 4366352653106772}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4059242437021072
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646082451081134}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 6.45047, y: 6.4476323, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4028793610838016}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4360109321774298
 Transform:
@@ -223,8 +254,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1716087798080166}
   m_LocalRotation: {x: -0, y: -0, z: 0.76270443, w: 0.6467472}
-  m_LocalPosition: {x: 0.236, y: 0.047, z: 0}
-  m_LocalScale: {x: 0.1066203, y: 0.10304516, z: 1}
+  m_LocalPosition: {x: 0.752, y: 0.173, z: 0}
+  m_LocalScale: {x: 0.18976118, y: 0.17808673, z: 1}
   m_Children: []
   m_Father: {fileID: 4620516853604240}
   m_RootOrder: 0
@@ -249,7 +280,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58026925845034804
+--- !u!58 &58498157629191976
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -261,9 +292,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -6.67, y: 7.76}
+  m_Offset: {x: -7.1208434, y: 7.9352283}
   serializedVersion: 2
-  m_Radius: 0.86
+  m_Radius: 2.2207468
 --- !u!58 &58947836133203406
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -278,7 +309,25 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2.1
+  m_Radius: 2.14
+--- !u!95 &95140706472388282
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1369578531697186}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 235ba1d5fff5a08449905e36906a29da, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!108 &108036077657400340
 Light:
   m_ObjectHideFlags: 1
@@ -371,6 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fa643af6952e844ba94674a278dfc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animaton: {fileID: 95140706472388282}
 --- !u!114 &114587200628743742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5032,12 +5082,12 @@ SpriteRenderer:
   m_SortingLayerID: 593684471
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: c68b6a60f9f5c194aabb7aaddd94a916, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.59, y: 0.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -5087,3 +5137,47 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!331 &331305323462129938
+SpriteMask:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1646082451081134}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_MaskAlphaCutoff: 0.2
+  m_FrontSortingLayerID: 0
+  m_BackSortingLayerID: 0
+  m_FrontSortingLayer: 0
+  m_BackSortingLayer: 0
+  m_FrontSortingOrder: 0
+  m_BackSortingOrder: 0
+  m_IsCustomRangeActive: 0

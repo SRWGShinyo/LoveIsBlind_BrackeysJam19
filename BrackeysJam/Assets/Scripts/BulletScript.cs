@@ -43,7 +43,7 @@ public class BulletScript : MonoBehaviour {
             }
         }
 
-            if (Input.GetButton("Fire1") && timeToShoot <= 0f)
+            if (Input.GetKeyDown(KeyCode.E) && timeToShoot <= 0f)
             {
                 particles.Play();
                 //scream.Play();
