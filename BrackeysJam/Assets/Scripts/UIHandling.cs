@@ -17,7 +17,8 @@ public class UIHandling : MonoBehaviour {
     public AudioSource winMus;
     public bool isMusActi = true;
 
-    public Image soundButt;
+    public Button soundButton;
+    private Image soundButt;
 
     public GameObject titleMenu;
 
@@ -33,6 +34,7 @@ public class UIHandling : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
+        soundButt = soundButton.GetComponent<Image>();
         player = GameObject.Find("Player");
         panel.SetActive(false);
         if (player)
@@ -80,7 +82,6 @@ public class UIHandling : MonoBehaviour {
             bSc.enabled = false;
         inGameUi.SetActive(false);
         pauseMen.SetActive(true);
-        soundButt = GameObject.Find("SoundButtonP").GetComponent<Image>();
         panel.SetActive(true);
         Time.timeScale = 0f;
     }

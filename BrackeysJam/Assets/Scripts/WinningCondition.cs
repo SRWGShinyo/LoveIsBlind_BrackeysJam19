@@ -42,6 +42,6 @@ public class WinningCondition : MonoBehaviour {
         Time.timeScale = 1f;
         panel.SetActive(false);
         GetComponent<TimeManagement>().timer = 0f;
-        //Ui.loadNext();
+        Ui.loadNext();
     }
 }

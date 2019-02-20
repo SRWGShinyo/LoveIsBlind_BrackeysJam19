@@ -914,7 +914,7 @@ GameObject:
   - component: {fileID: 114110770860544920}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4134,7 +4134,7 @@ MonoBehaviour:
   titleMus: {fileID: 82185106495532002}
   winMus: {fileID: 82409942979161896}
   isMusActi: 1
-  soundButt: {fileID: 0}
+  soundButton: {fileID: 114173895317982288}
   titleMenu: {fileID: 1396257150825284}
   points: 0
 --- !u!114 &114490366242385990
@@ -5768,8 +5768,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114488132698706352}
-        m_MethodName: loadNext
+      - m_Target: {fileID: 114263262779242752}
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
