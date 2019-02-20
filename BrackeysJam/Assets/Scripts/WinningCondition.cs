@@ -6,10 +6,12 @@ public class WinningCondition : MonoBehaviour {
 
     public GameObject winMenu;
     public GameObject panel;
+    UIHandling Ui;
 
 	// Use this for initialization
 	void Start () {
         winMenu.SetActive(false);
+        Ui = gameObject.GetComponent<UIHandling>();
 	}
 	
 	// Update is called once per frame
@@ -19,6 +21,12 @@ public class WinningCondition : MonoBehaviour {
 
     public void Win()
     {
+        if (Ui.isMusActi)
+        {
+            Ui.mainMus.Stop();
+            Ui.winMus.Play();
+        }
+        Cursor.visible = true;
         panel.SetActive(true);
         winMenu.SetActive(true);
         GameObject.Find("GameManager").GetComponent<UIHandling>().inGameUi.SetActive(false);
@@ -29,10 +37,11 @@ public class WinningCondition : MonoBehaviour {
 
     public void NextLevel()
     {
+        Cursor.visible = false;
         winMenu.SetActive(false);
         Time.timeScale = 1f;
         panel.SetActive(false);
         GetComponent<TimeManagement>().timer = 0f;
-        Debug.Log("Loading Next level...");
+        //Ui.loadNext();
     }
 }
