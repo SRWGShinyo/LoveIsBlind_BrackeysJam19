@@ -1846,6 +1846,10 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1882692707401548, guid: 3f0277ab9b92639458ebc52dd6323c8c, type: 2}
+      propertyPath: m_TagString
+      value: GameManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f0277ab9b92639458ebc52dd6323c8c, type: 2}
   m_IsPrefabParent: 0

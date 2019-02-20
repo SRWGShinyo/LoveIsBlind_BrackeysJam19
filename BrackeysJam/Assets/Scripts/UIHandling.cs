@@ -43,6 +43,7 @@ public class UIHandling : MonoBehaviour {
 	void Update () {
         if (SceneManager.GetActiveScene().name == "Title")
             soundButt = GameObject.Find("SoundButton").GetComponent<Image>();
+
         if (isMusActi)
             soundButt.sprite = Resources.Load<Sprite>("Sprites/MusicOn");
 
@@ -107,9 +108,9 @@ public class UIHandling : MonoBehaviour {
         winMenu.SetActive(false);
         Time.timeScale = 1f;
         gameObject.GetComponent<TimeManagement>().timer = 0f;
-        SceneManager.LoadScene("Title");
-
         pauseMen.SetActive(false);
+        titleMenu.SetActive(true);
+        SceneManager.LoadScene("Title");
         Destroy(gameObject);
     }
 
