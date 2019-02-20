@@ -17,6 +17,8 @@ public class UIHandling : MonoBehaviour {
     public AudioSource winMus;
     public bool isMusActi = true;
 
+    public Image soundButt;
+
     public GameObject titleMenu;
 
     BulletScript bSc;
@@ -39,6 +41,13 @@ public class UIHandling : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (SceneManager.GetActiveScene().name == "Title")
+            soundButt = GameObject.Find("SoundButton").GetComponent<Image>();
+        if (isMusActi)
+            soundButt.sprite = Resources.Load<Sprite>("Sprites/MusicOn");
+
+        else
+            soundButt.sprite = Resources.Load<Sprite>("Sprites/MusicOff");
 
         player = GameObject.Find("Player");
         if (player)
@@ -70,6 +79,7 @@ public class UIHandling : MonoBehaviour {
             bSc.enabled = false;
         inGameUi.SetActive(false);
         pauseMen.SetActive(true);
+        soundButt = GameObject.Find("SoundButtonP").GetComponent<Image>();
         panel.SetActive(true);
         Time.timeScale = 0f;
     }
@@ -265,6 +275,33 @@ public class UIHandling : MonoBehaviour {
             default:
                 Debug.Log("WTF");
                 break;
+        }
+    }
+
+    public void changeSound()
+    {
+
+
+        if (isMusActi)
+        {
+            isMusActi = false;
+            titleMus.Stop();
+            mainMus.Stop();
+            winMus.Stop();
+        }
+
+        else
+        {
+            isMusActi = true;
+            if (SceneManager.GetActiveScene().name == "Title")
+            {
+                titleMus.Play();
+            }
+
+            else
+            {
+                mainMus.Play();
+            }
         }
     }
 }
