@@ -12,6 +12,7 @@ public class BulletScript : MonoBehaviour {
     public ParticleSystem particles;
     public LayerMask whatToHit;
     public Transform bulletTrail;
+    //public AudioSource scream;
     Transform firePoint;
     public HashSet<GameObject> h;
 
@@ -45,6 +46,7 @@ public class BulletScript : MonoBehaviour {
             if (Input.GetButton("Fire1") && timeToShoot <= 0f)
             {
                 particles.Play();
+                //scream.Play();
                 toWait -= Time.deltaTime;
                 timeToShoot = 3f;
             }

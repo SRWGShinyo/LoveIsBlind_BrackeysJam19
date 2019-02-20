@@ -1904,9 +1904,28 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: loadNext
       objectReference: {fileID: 0}
+    - target: {fileID: 114488132698706352, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: mainMus
+      value: 
+      objectReference: {fileID: 1960275211}
+    - target: {fileID: 82367166720587926, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1059703429925994, guid: 3f0277ab9b92639458ebc52dd6323c8c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f0277ab9b92639458ebc52dd6323c8c, type: 2}
   m_IsPrefabParent: 0
+--- !u!82 &1960275211 stripped
+AudioSource:
+  m_PrefabParentObject: {fileID: 82367166720587926, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+    type: 2}
+  m_PrefabInternal: {fileID: 1960275210}
 --- !u!114 &1997820739 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114110770860544920, guid: 3f0277ab9b92639458ebc52dd6323c8c,

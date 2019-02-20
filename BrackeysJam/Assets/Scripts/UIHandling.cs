@@ -12,6 +12,9 @@ public class UIHandling : MonoBehaviour {
     public GameObject pauseMen;
     public GameObject winMenu;
 
+    public AudioSource mainMus;
+    public bool isMusActi = true;
+
     public GameObject titleMenu;
 
     BulletScript bSc;
@@ -81,6 +84,7 @@ public class UIHandling : MonoBehaviour {
 
     public void Title()
     {
+        mainMus.Stop();
         panel.SetActive(false);
 
         inGameUi.SetActive(false);
@@ -102,6 +106,8 @@ public class UIHandling : MonoBehaviour {
 
     public void loadLevel1()
     {
+        if (isMusActi)
+            mainMus.Play();
         gameObject.GetComponent<TitleMenuHandle>().menu.SetActive(false);
 
         panel.SetActive(false);
@@ -118,6 +124,8 @@ public class UIHandling : MonoBehaviour {
 
     public void loadLevel2()
     {
+        if (isMusActi)
+            mainMus.Play();
         gameObject.GetComponent<TitleMenuHandle>().menu.SetActive(false);
 
         panel.SetActive(false);
@@ -134,6 +142,8 @@ public class UIHandling : MonoBehaviour {
 
     public void loadLevel3()
     {
+        if (isMusActi)
+            mainMus.Play();
         gameObject.GetComponent<TitleMenuHandle>().menu.SetActive(false);
 
         panel.SetActive(false);
@@ -150,6 +160,8 @@ public class UIHandling : MonoBehaviour {
 
     public void loadLevel4()
     {
+        if (isMusActi)
+            mainMus.Play();
         gameObject.GetComponent<TitleMenuHandle>().menu.SetActive(false);
 
         panel.SetActive(false);
@@ -166,6 +178,8 @@ public class UIHandling : MonoBehaviour {
 
     public void loadLevel5()
     {
+        if (isMusActi)
+            mainMus.Play();
         gameObject.GetComponent<TitleMenuHandle>().menu.SetActive(false);
 
         panel.SetActive(false);
@@ -182,6 +196,8 @@ public class UIHandling : MonoBehaviour {
 
     public void loadLevel6()
     {
+        if (isMusActi)
+            mainMus.Play();
         gameObject.GetComponent<TitleMenuHandle>().menu.SetActive(false);
 
         panel.SetActive(false);
@@ -198,7 +214,9 @@ public class UIHandling : MonoBehaviour {
 
     public void loadNext()
     {
-        switch(nextLev)
+        if (isMusActi)
+            mainMus.Play();
+        switch (nextLev)
         {
             case "Level1":
                 loadLevel1();

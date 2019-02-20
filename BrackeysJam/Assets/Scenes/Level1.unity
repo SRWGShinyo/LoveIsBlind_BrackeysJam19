@@ -157,6 +157,11 @@ Prefab:
       propertyPath: lover
       value: 
       objectReference: {fileID: 1742417714}
+    - target: {fileID: 114587200628743742, guid: 3550de49e8154e146ab081ee0f677a7a,
+        type: 2}
+      propertyPath: scream
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3550de49e8154e146ab081ee0f677a7a, type: 2}
   m_IsPrefabParent: 0
