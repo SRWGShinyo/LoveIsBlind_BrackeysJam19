@@ -7,6 +7,9 @@ public class TimeManagement : MonoBehaviour {
     public float minutes = 0f;
     public float seconds = 0f;
 
+    public float totalMin = 0f;
+    public float totalSec = 0f;
+
     string time;
 
 	// Update is called once per frame
@@ -54,5 +57,34 @@ public class TimeManagement : MonoBehaviour {
     public int computePoints()
     {
         return (int)(5000 - (100 * minutes + 10 * seconds));
+    }
+
+    public void updateTotal()
+    {
+        totalSec += seconds;
+        if (totalSec >= 60)
+        {
+            totalMin += totalSec / 60;
+            totalSec = totalSec % 60;
+        }
+        totalMin += minutes;
+    }
+
+    public string getFinalTime()
+    {
+        string finMins = totalMin.ToString();
+        string finSecs = totalSec.ToString();
+
+        if (totalMin < 10)
+        {
+            finMins = "0" + totalMin.ToString();
+        }
+
+        if (totalSec < 10)
+        {
+            finSecs = "0" + totalSec.ToString();
+        }
+
+        return finMins + ":" + finSecs;
     }
 }

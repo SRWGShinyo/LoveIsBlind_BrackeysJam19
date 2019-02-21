@@ -1836,6 +1836,36 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114727655986915748, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114727655986915748, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114360304660293646, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114360304660293646, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114878988053469204, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114878988053469204, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114906251203263846, guid: 3f0277ab9b92639458ebc52dd6323c8c,
         type: 2}
       propertyPath: m_havePropertiesChanged
@@ -1846,11 +1876,55 @@ Prefab:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114485741898505078, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+    - target: {fileID: 114533203731717980, guid: 3f0277ab9b92639458ebc52dd6323c8c,
         type: 2}
-      propertyPath: m_text
-      value: Use your echolocalisation by pressing the E key...it'll reveal obstacles
-        !
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114533203731717980, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654234459692328, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114654234459692328, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806357122779652, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806357122779652, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114066799835856646, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114066799835856646, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806629118163056, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806629118163056, guid: 3f0277ab9b92639458ebc52dd6323c8c,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3f0277ab9b92639458ebc52dd6323c8c, type: 2}

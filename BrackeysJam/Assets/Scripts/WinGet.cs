@@ -20,7 +20,11 @@ public class WinGet : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Lover")
         {
-            gameman.GetComponent<WinningCondition>().Win();
+            if (SceneManager.GetActiveScene().name != "Level6")
+                gameman.GetComponent<WinningCondition>().Win();
+
+            else
+                gameman.GetComponent<WinningCondition>().WinLast();
         }
 
         else if (collision.gameObject.tag == "Levelbord")

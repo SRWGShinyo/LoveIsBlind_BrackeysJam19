@@ -5,6 +5,7 @@ using UnityEngine;
 public class WinningCondition : MonoBehaviour {
 
     public GameObject winMenu;
+    public GameObject winLMenu;
     public GameObject panel;
     UIHandling Ui;
 
@@ -33,6 +34,24 @@ public class WinningCondition : MonoBehaviour {
         Time.timeScale = 0f;
 
         GetComponent<UIHandling>().addPoints(GetComponent<TimeManagement>().computePoints());
+        GetComponent<TimeManagement>().updateTotal();
+    }
+
+    public void WinLast()
+    {
+        if (Ui.isMusActi)
+        {
+            Ui.mainMus.Stop();
+            Ui.winMus.Play();
+        }
+        GetComponent<UIHandling>().addPoints(GetComponent<TimeManagement>().computePoints());
+        GetComponent<TimeManagement>().updateTotal();
+
+        Cursor.visible = true;
+        panel.SetActive(true);
+        winLMenu.SetActive(true);
+        GameObject.Find("GameManager").GetComponent<UIHandling>().inGameUi.SetActive(false);
+        Time.timeScale = 0f;
     }
 
     public void NextLevel()

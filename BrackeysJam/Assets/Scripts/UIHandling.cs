@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -11,6 +13,9 @@ public class UIHandling : MonoBehaviour {
     public GameObject inGameUi;
     public GameObject pauseMen;
     public GameObject winMenu;
+    public GameObject winLMenu;
+
+    public string playerPseudo = "";
 
     public AudioSource mainMus;
     public AudioSource titleMus;
@@ -104,7 +109,7 @@ public class UIHandling : MonoBehaviour {
             titleMus.Play();
         }
         panel.SetActive(false);
-
+        winLMenu.SetActive(false);
         inGameUi.SetActive(false);
         winMenu.SetActive(false);
         Time.timeScale = 1f;
@@ -265,13 +270,13 @@ public class UIHandling : MonoBehaviour {
             case "Level3":
                 loadLevel3();
                 break;
-            case "level4":
+            case "Level4":
                 loadLevel4();
                 break;
-            case "level5":
+            case "Level5":
                 loadLevel5();
                 break;
-            case "level6":
+            case "Level6":
                 loadLevel6();
                 break;
             default:
@@ -304,6 +309,30 @@ public class UIHandling : MonoBehaviour {
             {
                 mainMus.Play();
             }
+        }
+    }
+
+    public void changedText(string newText)
+    {
+        playerPseudo = newText;
+
+    }
+
+    public void registerScore()
+    {
+        FileStream fileStream = new FileStream(@"leaderboard.txt",
+                                               FileMode.OpenOrCreate,
+                                               FileAccess.ReadWrite,
+                                               FileShare.None);
+
+        if (fileStream != null)
+        {
+            string line = playerPseudo + "        " + GetComponent<TimeManagement>().getFinalTime() 
+                                       + "        " + points.ToString() + "\n";
+            byte[] bytes = Encoding.ASCII.GetBytes(line);
+            fileStream.Write(bytes, 0, line.Length);
+            fileStream.Close();
+            Debug.Log("Score registered !");
         }
     }
 }
