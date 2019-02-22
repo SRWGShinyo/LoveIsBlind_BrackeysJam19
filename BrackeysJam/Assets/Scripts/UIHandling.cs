@@ -15,6 +15,7 @@ public class UIHandling : MonoBehaviour {
     public GameObject winMenu;
     public GameObject winLMenu;
 
+    int flowerCount = 0;
     public string playerPseudo = "";
 
     public AudioSource mainMus;
@@ -48,6 +49,17 @@ public class UIHandling : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (player)
+        {
+            player.GetComponentInChildren<BulletScript>().enabled = true;
+        }
+
+        if (panel.activeSelf)
+        {
+            Cursor.visible = true;
+        }
+
         if (SceneManager.GetActiveScene().name == "Title")
             soundButt = GameObject.Find("SoundButton").GetComponent<Image>();
 
@@ -129,6 +141,7 @@ public class UIHandling : MonoBehaviour {
 
     public void loadLevel1()
     {
+        flowerCount = 0;
         if (isMusActi)
         {
             titleMus.Stop();
@@ -150,6 +163,7 @@ public class UIHandling : MonoBehaviour {
 
     public void loadLevel2()
     {
+        flowerCount = 0;
         if (isMusActi)
         {
             titleMus.Stop();
@@ -170,6 +184,7 @@ public class UIHandling : MonoBehaviour {
 
     public void loadLevel3()
     {
+        flowerCount = 0;
         if (isMusActi)
         {
             titleMus.Stop();
@@ -191,6 +206,7 @@ public class UIHandling : MonoBehaviour {
 
     public void loadLevel4()
     {
+        flowerCount = 0;
         if (isMusActi)
         {
             titleMus.Stop();
@@ -212,6 +228,7 @@ public class UIHandling : MonoBehaviour {
 
     public void loadLevel5()
     {
+        flowerCount = 0;
         if (isMusActi)
         {
             titleMus.Stop();
@@ -233,6 +250,7 @@ public class UIHandling : MonoBehaviour {
 
     public void loadLevel6()
     {
+        flowerCount = 0;
         if (isMusActi)
         {
             titleMus.Stop();
@@ -254,6 +272,7 @@ public class UIHandling : MonoBehaviour {
 
     public void loadNext()
     {
+        flowerCount = 0;
         if (isMusActi)
         {
             mainMus.Play();
@@ -334,5 +353,21 @@ public class UIHandling : MonoBehaviour {
             fileStream.Close();
             Debug.Log("Score registered !");
         }
+    }
+
+    public void addToFlower()
+    {
+        flowerCount += 1;
+        addPoints(3000);
+    }
+
+    public int getFlowers()
+    {
+        return flowerCount;
+    }
+
+    public void setFlowers(int flow)
+    {
+        flowerCount = flow;
     }
 }

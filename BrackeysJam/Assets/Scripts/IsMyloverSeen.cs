@@ -8,7 +8,7 @@ public class IsMyloverSeen : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        if (lover.isVisible)
+        if (lover && lover.isVisible)
         {
             arrow.SetActive(false);
         }

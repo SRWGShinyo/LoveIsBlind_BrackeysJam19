@@ -7,6 +7,7 @@ TagManager:
   - Lover
   - Levelbord
   - GameManager
+  - Flower
   layers:
   - Default
   - TransparentFX

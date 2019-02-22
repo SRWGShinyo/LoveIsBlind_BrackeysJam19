@@ -8,7 +8,8 @@ public class BulletScript : MonoBehaviour {
     
     float timeToShoot = 0f;
 
-    float toWait = 0.5f;
+    float keepDetecting = 0f;
+    float toWait = 4f;
     public ParticleSystem particles;
     public LayerMask whatToHit;
     public Transform bulletTrail;
@@ -25,16 +26,14 @@ public class BulletScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (toWait != 0.5f)
+        if (keepDetecting > 0f)
         {
-            toWait -= Time.deltaTime;
-        }
-        if (toWait <= 0f)
-        {
-            toWait = 0.5f;
+            keepDetecting -= Time.deltaTime;
             foreach (var n in h)
             {
-                HoldOutline outlined = n.GetComponent<HoldOutline>();
+                HoldOutline outlined = null;
+                if (n)
+                    outlined = n.GetComponent<HoldOutline>();
                 if (outlined)
                 {
                     outlined.outlin.enabled = true;
@@ -43,18 +42,15 @@ public class BulletScript : MonoBehaviour {
             }
         }
 
-            if (Input.GetKeyDown(KeyCode.E) && timeToShoot <= 0f)
-            {
-                particles.Play();
-                //scream.Play();
-                toWait -= Time.deltaTime;
-                timeToShoot = 3f;
-            }
-
-        else
+        if (Input.GetKeyDown(KeyCode.E) && timeToShoot <= 0f)
         {
-            timeToShoot -= Time.deltaTime;
+           keepDetecting = 3.5f;
+           particles.Play();
+           toWait -= Time.deltaTime;
+           timeToShoot = 3f;
         }
+
+        timeToShoot -= Time.deltaTime;
 	}
 
 
